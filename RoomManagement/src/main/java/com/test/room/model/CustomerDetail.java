@@ -1,5 +1,5 @@
 package com.test.room.model;
 
-public class EmployeeDetail {
+public class CustomerDetail {
 
 }
