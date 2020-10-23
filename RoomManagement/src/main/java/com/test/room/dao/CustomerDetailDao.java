@@ -6,11 +6,12 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 import com.test.room.model.Booking;
+import com.test.room.model.CustomerDetail;
 
 
 
-public interface CustomerDetailDao extends CrudRepository<Booking, Integer>{
+public interface CustomerDetailDao extends CrudRepository<CustomerDetail, Integer>{
 	
-	List<Booking> findByEmpId(int empId);
+	List<Booking> findByEmpId(int custId);
 
 }
