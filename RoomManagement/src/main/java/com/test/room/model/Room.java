@@ -27,6 +27,13 @@ public class Room {
 	
 	private int floorNo;
 	
+	public Room(int roomId, String roomName, String buildingName, int floorNo) {
+		super();
+		this.roomId = roomId;
+		this.roomName = roomName;
+		this.buildingName = buildingName;
+		this.floorNo = floorNo;
+	}
 	@Override
 	public String toString() {
 		return "Room [roomId=" + roomId + ", roomName=" + roomName + ", buildingName=" + buildingName + ", floorNo="

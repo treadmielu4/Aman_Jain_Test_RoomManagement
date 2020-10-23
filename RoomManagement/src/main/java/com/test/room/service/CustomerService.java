@@ -10,17 +10,13 @@ import com.test.room.model.Room;
 
 public interface CustomerService {
 	
-	public boolean validateAdmin(int empId, String password);
 	
-	public void createRoom(Room room);
 	
-	public void addEmployee(CustomerDetail employeedetail);
-	public void deleteEmployee(CustomerDetail employeedetail);
-	public List<CustomerDetail>  showallemployee();
 	
-	public void time(long start , long end);
+	public void deleteCustomer(int empId);
 
-	public boolean validateEmployeeId(int empId);
+
+	public boolean validateCustomerId(int empId);
 
 	public List<Room> validateTime(long startdate, long enddate, String buildingname);
 
@@ -32,9 +28,11 @@ public interface CustomerService {
 
 	public boolean validateBookId(int bookId);
 
-	public boolean validateEmployeeIdInBooking(int empId);
+	
 
-	public void bookroom(Booking book);
+	public List<Booking> bookroom(Booking book);
+	public void createRoom(Room room);
+	public List<CustomerDetail> showallcustomer();
 
 	
 

@@ -22,7 +22,7 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int bookingId;
-	private int empId;
+	private int custId;
 	private long fromDate;
 	private long toDate;
 	private int roomId;
@@ -35,12 +35,12 @@ public class Booking {
 		this.bookingId = bookingId;
 	}
 
-	public int getEmpId() {
-		return empId;
+	public int getCustId() {
+		return custId;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setCustId(int custId) {
+		this.custId = custId;
 	}
 
 	public long getFromDate() {
@@ -69,7 +69,7 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", empId=" + empId + ", fromDate=" + fromDate + ", toDate=" + toDate
+		return "Booking [bookingId=" + bookingId  + ", fromDate=" + fromDate + ", toDate=" + toDate
 				+ ", roomId=" + roomId + "]";
 	}
 

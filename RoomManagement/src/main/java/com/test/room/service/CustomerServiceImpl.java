@@ -32,10 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	EntityManager em;
 
-	@Override
-	public boolean validateAdmin(int empId, String password) {
-		return empId == 100 && password.equalsIgnoreCase("admin");
-	}
+	
 
 	@Override
 	public void createRoom(Room room) {
@@ -45,42 +42,30 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
+	
+
 	@Override
-	public void addEmployee(CustomerDetail customerdetail) {
+	public void deleteCustomer(int empId) {
 		// TODO Auto-generated method stub
 
-		customerdetaildao.save(customerdetail);
+		customerdetaildao.deleteById(empId);
 
 	}
 
 	@Override
-	public void deleteEmployee(CustomerDetail customerdetail) {
+	public List<CustomerDetail> showallcustomer() {
 		// TODO Auto-generated method stub
 
-		customerdetaildao.delete(customerdetail);
+		List<CustomerDetail> showcustomerlist = (List<CustomerDetail>) customerdetaildao.findAll();
+		return showcustomerlist;
 
 	}
 
+	
 	@Override
-	public List<CustomerDetail> showallemployee() {
+	public boolean validateCustomerId(int custId) {
 		// TODO Auto-generated method stub
-
-		List<CustomerDetail> showemployeelist = (List<CustomerDetail>) customerdetaildao.findAll();
-		return showemployeelist;
-
-	}
-
-	@Override
-	public void time(long start, long end) {
-		// TODO Auto-generated method stub
-		System.out.println(start + "    " + end);
-
-	}
-
-	@Override
-	public boolean validateEmployeeId(int empId) {
-		// TODO Auto-generated method stub
-		return customerdetaildao.existsById(empId);
+		return customerdetaildao.existsById(custId);
 
 	}
 
@@ -138,24 +123,12 @@ public class CustomerServiceImpl implements CustomerService {
 		return bookingdao.existsById(bookId);
 	}
 
-	@Override
-	public boolean validateEmployeeIdInBooking(int empId) {
-		
-		
-		// TODO Auto-generated method stub
-		List<Booking> check=bookingdao.findByEmpId(empId);
-		if(check.size()==0) {
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
+	
 
 	@Override
-	public void bookroom(Booking book) {
+	public List<Booking> bookroom(Booking book) {
 		// TODO Auto-generated method stub
-		bookingdao.save(book);
+		return (List<Booking>) bookingdao.save(book);
 	}
 
 	
